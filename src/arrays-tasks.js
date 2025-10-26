@@ -118,8 +118,10 @@ function removeFalsyValues(arr) {
  *    getStringsLength([ '', 'a', 'bc', 'def', 'ghij' ]) => [ 0, 1, 2, 3, 4 ]
  *    getStringsLength([ 'angular', 'react', 'ember' ]) => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
+function getStringsLength(arr) {
+  let newArr = [];
+  newArr = arr.map((value) => value.length);
+  return newArr;
 }
 
 /**
@@ -136,8 +138,13 @@ function getStringsLength(/* arr */) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  let sum = 0;
+  if (arr.length !== 0) {
+    sum = arr.reduce((value, currentValue) => value + currentValue);
+    return +(sum / arr.length).toFixed(2);
+  }
+  return 0;
 }
 
 /**
